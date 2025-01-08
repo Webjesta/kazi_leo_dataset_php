@@ -1,0 +1,35 @@
+USE bukurudb;
+
+CREATE TABLE users (
+    id INT(11) AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    username VARCHAR(50) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    phone VARCHAR(20) NOT NULL
+);
+
+
+INSERT INTO users (name, email, username, password, phone) 
+VALUES ('Abdul Pume', 'pume@example.com', 'thepume', '12345', '0780975050');
+
+
+Connect to the Database:
+We use mysqli_connect() to connect to the MySQL database with the parameters: server (localhost), username (root), password (empty here), and database name (bukurudb).
+
+Write the Query:
+The query SELECT * FROM users fetches all the data from the users table.
+
+Execute the Query:
+We use mysqli_query() to execute the query and store the result in the $result variable. This result is the record set (a collection of rows).
+
+Loop through the Data:
+Using mysqli_fetch_assoc(), we retrieve each row one by one. This function returns the data as an associative array, so we can access each column by name (e.g., $row['name']).
+
+Close the Database Connection:
+After retrieving the data, we close the database connection with mysqli_close().
+
+
+This setup retrieves all the users in the users table and displays them.
+You can expand this further by adding user registration or login features using the same approach.
+Make sure the database and table are created correctly before running the PHP code.
